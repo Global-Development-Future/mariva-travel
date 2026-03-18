@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { siteConfig } from "@/config/site";
 
 const fleetFeatures = [
   {
     title: "Microbuze Executive",
-    description: "Mercedes Sprinter 8+1 locuri, ideale pentru grupuri mici",
+    description: "Vehicule 8+1 locuri, ideale pentru grupuri mici si calatorii confortabile",
     capacity: "8+1 locuri",
   },
   {
@@ -58,8 +57,9 @@ export function FleetSection() {
             <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full">
               <Image
                 src="/images/fleet-minibus.jpg"
-                alt="Microbuz Mercedes Sprinter Mariva Travel"
+                alt="Microbuz Mariva Travel"
                 fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="image-overlay absolute inset-0" />
@@ -71,10 +71,10 @@ export function FleetSection() {
                   className="mt-2 text-3xl font-light"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
-                  Mercedes Sprinter
+                  Microbuze 8+1 Locuri
                 </h3>
                 <p className="mt-2 max-w-md text-white/70">
-                  Microbuze executive pentru grupuri mici, cu toate dotarile 
+                  Vehicule executive pentru grupuri mici, cu toate dotarile 
                   necesare pentru o calatorie confortabila.
                 </p>
               </div>
@@ -88,6 +88,7 @@ export function FleetSection() {
                 src="/images/interior-luxury.jpg"
                 alt="Interior luxos autocar Mariva Travel"
                 fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="image-overlay absolute inset-0" />
@@ -98,22 +99,21 @@ export function FleetSection() {
             </div>
           </div>
 
-          {/* Video */}
+          {/* On the Road Image */}
           <div className="relative overflow-hidden rounded-sm">
-            <video
-              className="aspect-[4/3] h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source src={siteConfig.serviceVideos[0].src} type="video/mp4" />
-            </video>
-            <div className="image-overlay absolute inset-0" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <p className="text-sm font-medium">Pe Drum</p>
-              <p className="text-xs text-white/60">Siguranta in miscare</p>
+            <div className="relative aspect-[4/3]">
+              <Image
+                src="/images/on-the-road.jpg"
+                alt="Microbuz Mariva Travel pe drum"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="image-overlay absolute inset-0" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-sm font-medium">Pe Drum</p>
+                <p className="text-xs text-white/60">Siguranta in miscare</p>
+              </div>
             </div>
           </div>
         </div>

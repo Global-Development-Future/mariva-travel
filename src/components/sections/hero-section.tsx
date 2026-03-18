@@ -19,6 +19,7 @@ export function HeroSection() {
           src="/images/hero-coach.jpg"
           alt="Autocar premium Mariva Travel pe autostrada europeana"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />

@@ -82,6 +82,8 @@ export function RoutesSection() {
                 src="/images/europe-routes.jpg"
                 alt="Harta rutelor Mariva Travel in Europa"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="eager"
                 className="object-cover"
               />
               <div className="absolute inset-0 image-overlay-subtle" />
