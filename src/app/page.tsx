@@ -16,9 +16,9 @@ export const revalidate = 3600;
 export function generateMetadata(): Metadata {
   return createPageMetadata({
     title:
-      "Transport Persoane și Colete România - Europa | Mariva Travel Premium",
+      "Mariva Travel | Transport International Persoane Romania - Europa",
     description:
-      "Platformă premium Mariva Travel pentru transport internațional persoane și colete, cu rezervări rapide telefonic sau pe WhatsApp.",
+      "Transport premium de persoane si colete Romania - Europa. Microbuze si autocare moderne, preluare de la adresa, disponibilitate 24/7. Belgia, Germania, Franta, Italia si alte destinatii.",
     path: "/",
   });
 }
@@ -29,7 +29,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="pb-[calc(7.4rem+env(safe-area-inset-bottom))] md:pb-0">
+      <main className="pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
         <HeroSection />
         <RoutesSection />
         <FleetSection />

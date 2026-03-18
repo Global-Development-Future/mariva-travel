@@ -1,72 +1,132 @@
-const indicators = [
-  { label: "Clienți recurenți", value: "85%+" },
-  { label: "Rezervări confirmate rapid", value: "Sub 10 min" },
-  { label: "Disponibilitate dispecerat", value: "24/7" },
-  { label: "Rute internaționale", value: "11+" },
+const stats = [
+  { value: "85%", label: "Clienti Recurenti" },
+  { value: "10min", label: "Timp Raspuns" },
+  { value: "24/7", label: "Disponibilitate" },
+  { value: "15+", label: "Ani Experienta" },
 ] as const;
 
-const reviews = [
+const testimonials = [
   {
-    name: "Raluca, Cluj",
-    text: "Am rezervat simplu pe WhatsApp, iar preluarea a fost exact cum am discutat.",
+    quote: "Am calatorit de nenumarate ori cu Mariva Travel. Serviciu impecabil, punctualitate si confort de fiecare data.",
+    author: "Raluca M.",
+    location: "Cluj-Napoca",
+    route: "Romania - Belgia",
   },
   {
-    name: "Cosmin, Arad",
-    text: "Transport sigur spre Germania și comunicare foarte clară pe toată ruta.",
+    quote: "Trimit colete lunar in Germania. Comunicare excelenta si livrare la timp. Recomand cu incredere.",
+    author: "Cosmin P.",
+    location: "Arad",
+    route: "Romania - Germania",
   },
   {
-    name: "Elena, București",
-    text: "Trimit colete frecvent în Belgia, iar echipa răspunde mereu rapid.",
+    quote: "Personal profesionist si vehicule curate. Cea mai buna experienta de transport international pe care am avut-o.",
+    author: "Elena D.",
+    location: "Bucuresti",
+    route: "Romania - Italia",
+  },
+] as const;
+
+const values = [
+  {
+    title: "Siguranta",
+    description: "Vehicule verificate tehnic, soferi profesionisti cu experienta pe rute internationale.",
+  },
+  {
+    title: "Punctualitate",
+    description: "Respectam programul stabilit si comunicam orice modificare in timp real.",
+  },
+  {
+    title: "Transparenta",
+    description: "Preturi clare de la inceput, fara costuri ascunse sau surprize neplacute.",
   },
 ] as const;
 
 export function TrustSection() {
   return (
-    <section className="py-12 sm:py-14">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="fade-in-up card-soft p-5 sm:p-7">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--brand-600)]">
-            Încredere & Rezultate
-          </p>
-          <h2 className="mt-2 text-3xl font-black tracking-tight text-[var(--ink-950)] sm:text-4xl">
-            Serviciu profesionist, orientat spre client
-          </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--ink-700)] sm:text-base">
-            Obiectivul nostru este să transformăm rezervarea transportului
-            internațional într-un proces simplu, predictibil și eficient.
-          </p>
-
-          <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {indicators.map((item) => (
-              <article
-                key={item.label}
-                className="rounded-xl border border-[var(--line-300)] bg-[var(--paper-200)] px-3 py-4 text-center"
+    <section id="incredere" className="bg-background py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Stats Bar */}
+        <div className="grid grid-cols-2 gap-6 border-y border-border py-12 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p 
+                className="text-4xl font-light text-foreground lg:text-5xl"
+                style={{ fontFamily: "var(--font-playfair)" }}
               >
-                <p className="text-lg font-black text-[var(--ink-950)]">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--muted-500)]">
-                  {item.label}
-                </p>
-              </article>
-            ))}
-          </div>
+                {stat.value}
+              </p>
+              <p className="mt-2 text-xs font-medium uppercase tracking-wider text-muted">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <blockquote
-              key={review.name}
-              className="fade-in-up card-soft effect-rise px-5 py-5"
+        {/* Main Content */}
+        <div className="mt-24 grid gap-16 lg:grid-cols-2">
+          {/* Left Column - About */}
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              De Ce Noi
+            </span>
+            <h2 
+              className="mt-4 text-4xl font-light leading-tight tracking-tight text-foreground lg:text-5xl"
+              style={{ fontFamily: "var(--font-playfair)" }}
             >
-              <p className="text-sm leading-relaxed text-[var(--ink-700)]">
-                &bdquo;{review.text}&rdquo;
-              </p>
-              <footer className="mt-3 text-xs font-black uppercase tracking-[0.13em] text-[var(--brand-600)]">
-                {review.name}
-              </footer>
-            </blockquote>
-          ))}
+              Incredere construita
+              <span className="block">prin rezultate</span>
+            </h2>
+            <div className="mt-6 h-px w-20 bg-accent" />
+            
+            <p className="mt-8 text-lg leading-relaxed text-muted">
+              De peste 15 ani, Mariva Travel conecteaza Romania cu Europa de Vest. 
+              Am construit o reputatie solida bazata pe profesionalism, punctualitate 
+              si grija pentru fiecare pasager.
+            </p>
+
+            {/* Values */}
+            <div className="mt-12 flex flex-col gap-6">
+              {values.map((value, index) => (
+                <div key={value.title} className="group flex gap-4">
+                  <span className="text-sm font-medium text-accent">0{index + 1}</span>
+                  <div>
+                    <h3 className="font-medium text-foreground">{value.title}</h3>
+                    <p className="mt-1 text-sm text-muted">{value.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Testimonials */}
+          <div className="flex flex-col gap-6">
+            {testimonials.map((testimonial) => (
+              <blockquote
+                key={testimonial.author}
+                className="card-premium p-6 hover-lift"
+              >
+                <div className="flex items-center gap-2 text-accent">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="mt-4 text-foreground leading-relaxed">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <footer className="mt-4 flex items-center justify-between border-t border-border pt-4">
+                  <div>
+                    <p className="font-medium text-foreground">{testimonial.author}</p>
+                    <p className="text-sm text-muted">{testimonial.location}</p>
+                  </div>
+                  <span className="text-xs font-medium uppercase tracking-wider text-accent">
+                    {testimonial.route}
+                  </span>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
         </div>
       </div>
     </section>
