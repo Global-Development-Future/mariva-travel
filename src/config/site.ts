@@ -49,7 +49,7 @@ export const serviceVideos = [
 export const siteConfig = {
   name: "Mariva Travel",
   legalName: "Mariva Travel SRL",
-  url: "https://www.marivatravel.ro",
+  url: "https://marivatravel.com",
   dispatchPhoneDisplay: "0744 888 888",
   dispatchPhoneE164: "+40744888888",
   whatsappPhoneDisplay: "0744 111 111",

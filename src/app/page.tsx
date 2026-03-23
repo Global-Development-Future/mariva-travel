@@ -11,8 +11,6 @@ import {
   getTransportServiceJsonLd,
 } from "@/lib/structured-data";
 
-export const revalidate = 3600;
-
 export function generateMetadata(): Metadata {
   return createPageMetadata({
     title:

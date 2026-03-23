@@ -10,7 +10,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-foreground">
+    <section id="acasa" className="relative min-h-screen overflow-hidden bg-foreground">
       <Navigation />
       
       {/* Background Image with Parallax Effect */}
