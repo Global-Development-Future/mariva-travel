@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Navigation } from "@/components/layout/navigation";
 
 const stats = [
-  { value: "10+", label: "Tari Europene" },
-  { value: "24/7", label: "Disponibilitate" },
-  { value: "15+", label: "Ani Experienta" },
+  { value: "10", label: "Tari Europene" },
+  { value: "Zilnic", label: "Plecari" },
+  { value: "Door-to-Door", label: "Serviciu" },
 ] as const;
 
 export function HeroSection() {
@@ -34,7 +35,7 @@ export function HeroSection() {
           <div className="animate-fade-in-up opacity-0">
             <span className="inline-flex items-center gap-2 border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/90 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Transport International Premium
+              Transport Persoane & Colete Door-to-Door
             </span>
           </div>
 
@@ -43,16 +44,29 @@ export function HeroSection() {
             className="animate-fade-in-up animation-delay-100 mt-8 text-5xl font-light leading-[1.1] tracking-tight text-white opacity-0 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Calatorii sigure
-            <span className="block text-accent">prin Europa</span>
+            Transport persoane si colete
+            <span className="block text-accent">Romania - Europa, zilnic</span>
           </h1>
 
           {/* Description */}
-          <p className="animate-fade-in-up animation-delay-200 mt-6 max-w-xl text-lg leading-relaxed text-white/70 opacity-0">
-            Mariva Travel ofera transport international de persoane si colete cu 
-            flota moderna, confort premium si servicii de incredere pe rutele 
-            Romania - Europa de Vest.
+          <p className="animate-fade-in-up animation-delay-200 mt-6 max-w-2xl text-lg leading-relaxed text-white/70 opacity-0">
+            Uita de grija bagajelor, schimbarilor de tren sau a curselor complicate.
+            Mariva Travel te preia din fata casei si te lasa la adresa destinatiei
+            in 10 tari europene, cu tarife corecte, program flexibil si rezervari
+            rapide pe telefon sau WhatsApp.
           </p>
+
+          <div className="animate-fade-in-up animation-delay-200 mt-6 flex flex-wrap gap-2 opacity-0">
+            {siteConfig.destinationMarkets.slice(0, 6).map((market) => (
+              <Link
+                key={market.slug}
+                href={`/transport/${market.slug}/`}
+                className="inline-flex items-center border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-white/80"
+              >
+                Romania - {market.country}
+              </Link>
+            ))}
+          </div>
 
           {/* CTA Buttons */}
           <div className="animate-fade-in-up animation-delay-300 mt-10 flex flex-col gap-4 opacity-0 sm:flex-row sm:items-center">
@@ -60,7 +74,7 @@ export function HeroSection() {
               href={`tel:${siteConfig.dispatchPhoneE164}`}
               className="group inline-flex h-14 items-center justify-center gap-3 bg-accent px-8 text-sm font-semibold uppercase tracking-wider text-foreground transition-all duration-300 hover:bg-white"
             >
-              <span>Rezerva Calatoria</span>
+              <span>Cere Oferta Acum</span>
               <svg 
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
@@ -85,7 +99,7 @@ export function HeroSection() {
 
           {/* Phone Number */}
           <p className="animate-fade-in-up animation-delay-400 mt-6 text-sm text-white/50 opacity-0">
-            Sau suna direct: <span className="font-medium text-white/80">{siteConfig.dispatchPhoneDisplay}</span>
+            Telefon: <span className="font-medium text-white/80">{siteConfig.dispatchPhoneDisplay}</span>  /  WhatsApp: <span className="font-medium text-white/80">{siteConfig.whatsappPhoneDisplay}</span>
           </p>
         </div>
 
@@ -108,7 +122,7 @@ export function HeroSection() {
             {/* Scroll Indicator */}
             <div className="flex flex-col items-center gap-2 md:ml-auto">
               <span className="text-xs font-medium uppercase tracking-wider text-white/50">
-                Descopera mai mult
+                Vezi rutele si avantajele
               </span>
               <div className="animate-scroll h-12 w-px bg-gradient-to-b from-white/50 to-transparent" />
             </div>

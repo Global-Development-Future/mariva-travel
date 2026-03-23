@@ -13,5 +13,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1,
     },
+    {
+      url: `${siteConfig.url}/transport/`,
+      lastModified,
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    ...siteConfig.destinationMarkets.map((market) => ({
+      url: `${siteConfig.url}/transport/${market.slug}/`,
+      lastModified,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    })),
   ];
 }

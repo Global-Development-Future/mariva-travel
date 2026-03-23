@@ -5,6 +5,7 @@ type CreatePageMetadataInput = {
   title: string;
   description: string;
   path: `/${string}` | "/";
+  keywords?: string[];
   noIndex?: boolean;
 };
 
@@ -23,18 +24,29 @@ const robotsDirectives = {
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Mariva Travel | Transport persoane și colete România - Europa",
+    default: "Transport persoane si colete Romania - Europa, door-to-door zilnic",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  manifest: "/manifest.webmanifest",
+  category: "transport",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   keywords: [
-    "transport persoane România Europa",
-    "transport colete internațional",
-    "microbuz România Germania",
-    "curse România Belgia",
-    "transport la adresă",
-    "transport WhatsApp rezervare",
+    "transport persoane Romania Europa",
+    "transport persoane international",
+    "transport colete Romania Europa",
+    "transport door to door Romania Europa",
+    "transport persoane Germania Romania",
+    "transport persoane Belgia Romania",
+    "transport persoane Franta Romania",
+    "curse zilnice Romania Europa",
+    "transport la adresa Europa",
+    "rezervari transport WhatsApp",
     "Mariva Travel",
   ],
   alternates: {
@@ -47,14 +59,21 @@ export const defaultMetadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "Mariva Travel | Transport persoane și colete România - Europa",
+    title: "Transport persoane si colete Romania - Europa, door-to-door zilnic",
     description: siteConfig.description,
     url: siteConfig.url,
+    images: [
+      {
+        url: siteConfig.socialImage,
+        alt: "Mariva Travel - transport persoane si colete door-to-door Romania Europa",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mariva Travel | Transport persoane și colete România - Europa",
+    title: "Transport persoane si colete Romania - Europa, door-to-door zilnic",
     description: siteConfig.description,
+    images: [siteConfig.socialImage],
   },
   robots: robotsDirectives,
 };
@@ -63,6 +82,7 @@ export function createPageMetadata({
   title,
   description,
   path,
+  keywords,
   noIndex = false,
 }: CreatePageMetadataInput): Metadata {
   const canonicalUrl = new URL(path, siteConfig.url).toString();
@@ -70,6 +90,7 @@ export function createPageMetadata({
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -80,11 +101,18 @@ export function createPageMetadata({
       locale: siteConfig.locale,
       siteName: siteConfig.name,
       type: "website",
+      images: [
+        {
+          url: siteConfig.socialImage,
+          alt: `${siteConfig.name} - ${title}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [siteConfig.socialImage],
     },
     robots: noIndex
       ? { index: false, follow: false }

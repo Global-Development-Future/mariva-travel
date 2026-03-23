@@ -1,8 +1,8 @@
 const stats = [
   { value: "85%", label: "Clienti Recurenti" },
   { value: "10min", label: "Timp Raspuns" },
-  { value: "24/7", label: "Disponibilitate" },
-  { value: "15+", label: "Ani Experienta" },
+  { value: "24/7", label: "Dispecerat" },
+  { value: "10", label: "Tari Europene" },
 ] as const;
 
 const testimonials = [
@@ -10,34 +10,34 @@ const testimonials = [
     quote: "Am calatorit de nenumarate ori cu Mariva Travel. Serviciu impecabil, punctualitate si confort de fiecare data.",
     author: "Raluca M.",
     location: "Cluj-Napoca",
-    route: "Romania - Belgia",
+    route: "Transport Romania - Belgia",
   },
   {
     quote: "Trimit colete lunar in Germania. Comunicare excelenta si livrare la timp. Recomand cu incredere.",
     author: "Cosmin P.",
     location: "Arad",
-    route: "Romania - Germania",
+    route: "Colete Romania - Germania",
   },
   {
     quote: "Personal profesionist si vehicule curate. Cea mai buna experienta de transport international pe care am avut-o.",
     author: "Elena D.",
     location: "Bucuresti",
-    route: "Romania - Italia",
+    route: "Transport Romania - Italia",
   },
 ] as const;
 
 const values = [
   {
-    title: "Siguranta",
-    description: "Vehicule verificate tehnic, soferi profesionisti cu experienta pe rute internationale.",
+    title: "Door-to-door real",
+    description: "Preluam din Romania si lasam la destinatie, reducand drumurile suplimentare si timpii pierduti.",
   },
   {
-    title: "Punctualitate",
-    description: "Respectam programul stabilit si comunicam orice modificare in timp real.",
+    title: "Comunicare rapida",
+    description: "Raspundem rapid la cereri de pret, disponibilitate, rezervare si status pentru colete sau bagaje.",
   },
   {
-    title: "Transparenta",
-    description: "Preturi clare de la inceput, fara costuri ascunse sau surprize neplacute.",
+    title: "Tarife transparente",
+    description: "Discuti direct cu dispeceratul si primesti o oferta clara, adaptata traseului si nevoii tale.",
   },
 ] as const;
 
@@ -73,15 +73,16 @@ export function TrustSection() {
               className="mt-4 text-4xl font-light leading-tight tracking-tight text-foreground lg:text-5xl"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Incredere construita
-              <span className="block">prin rezultate</span>
+              De ce aleg clientii
+              <span className="block">Mariva Travel</span>
             </h2>
             <div className="mt-6 h-px w-20 bg-accent" />
             
             <p className="mt-8 text-lg leading-relaxed text-muted">
-              De peste 15 ani, Mariva Travel conecteaza Romania cu Europa de Vest. 
-              Am construit o reputatie solida bazata pe profesionalism, punctualitate 
-              si grija pentru fiecare pasager.
+              Mariva Travel este ales de clienti care au nevoie de transport
+              persoane si colete Romania - Europa fara stres, fara schimbari
+              multiple si fara comunicare greoaie. Punem accent pe trasee clare,
+              raspuns rapid si confort pe intreaga ruta.
             </p>
 
             {/* Values */}

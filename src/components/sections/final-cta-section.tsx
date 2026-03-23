@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export function FinalCtaSection() {
@@ -14,15 +15,16 @@ export function FinalCtaSection() {
               className="mt-4 text-4xl font-light leading-tight tracking-tight lg:text-5xl"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Pregatit pentru
-              <span className="block text-accent">urmatoarea calatorie?</span>
+              MARIVA TRAVEL:
+              <span className="block text-accent">transport persoane & colete, zilnic</span>
             </h2>
             <div className="mt-6 h-px w-20 bg-accent" />
             
             <p className="mt-8 text-lg leading-relaxed text-white/60">
-              Contacteaza-ne acum pentru a rezerva locul tau sau pentru a primi 
-              o oferta personalizata. Echipa noastra este disponibila 24/7 pentru 
-              a raspunde intrebarilor tale.
+              Contacteaza-ne acum pentru o oferta instant pentru transport
+              persoane sau colete. Te ajutam cu preluare de la adresa, rute
+              Romania - Europa, tarife transparente si confirmare rapida direct
+              din dispecerat.
             </p>
 
             {/* Contact Methods */}
@@ -59,6 +61,10 @@ export function FinalCtaSection() {
                 </div>
               </a>
             </div>
+
+            <p className="mt-10 text-sm uppercase tracking-[0.18em] text-white/40">
+              Romania - Belgia - Germania - Franta - Danemarca - Italia - Luxemburg - Elvetia - Olanda - Austria - Ungaria
+            </p>
           </div>
 
           {/* Right Column - CTA Card */}
@@ -68,10 +74,10 @@ export function FinalCtaSection() {
                 className="text-2xl font-light"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                Rezerva acum
+                Cere oferta instant
               </h3>
               <p className="mt-2 text-white/60">
-                Suna sau trimite mesaj pentru a primi confirmarea in maxim 10 minute.
+                Spune-ne ruta, numarul de persoane sau detaliile coletului si revenim rapid cu disponibilitate si pret.
               </p>
               
               <div className="mt-8 flex flex-col gap-4">
@@ -82,7 +88,7 @@ export function FinalCtaSection() {
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span>Suna pentru Rezervare</span>
+                  <span>Suna pentru Oferta</span>
                 </a>
                 
                 <a
@@ -99,7 +105,7 @@ export function FinalCtaSection() {
               </div>
 
               <p className="mt-6 text-center text-xs text-white/40">
-                Disponibil 24/7 pentru rezervari si informatii
+                Disponibil 24/7 pentru rezervari, oferte si informatii despre rute
               </p>
             </div>
           </div>
@@ -121,17 +127,20 @@ export function FinalCtaSection() {
                 </span>
               </div>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
-                Transport international de persoane si colete pe rute Romania - Europa. 
-                Siguranta, confort si profesionalism de peste 15 ani.
+                Transport international de persoane si colete door-to-door pe
+                rute Romania - Europa, cu plecari zilnice, tarife corecte si
+                rezervari rapide.
               </p>
             </div>
 
             <div>
               <h4 className="text-sm font-medium uppercase tracking-wider">Rute Principale</h4>
               <ul className="mt-4 flex flex-col gap-2">
-                {siteConfig.destinationCountries.slice(0, 5).map((country) => (
-                  <li key={country}>
-                    <span className="text-sm text-white/50">Romania - {country}</span>
+                {siteConfig.destinationMarkets.slice(0, 5).map((market) => (
+                  <li key={market.slug}>
+                    <Link href={`/transport/${market.slug}/`} className="text-sm text-white/50 transition-colors hover:text-accent">
+                      Romania - {market.country}
+                    </Link>
                   </li>
                 ))}
               </ul>

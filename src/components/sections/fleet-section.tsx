@@ -3,12 +3,12 @@ import Image from "next/image";
 const fleetFeatures = [
   {
     title: "Microbuze Executive",
-    description: "Vehicule 8+1 locuri, ideale pentru grupuri mici si calatorii confortabile",
+    description: "Vehicule 8+1 locuri, ideale pentru grupuri mici, transferuri door-to-door si rute rapide",
     capacity: "8+1 locuri",
   },
   {
     title: "Autocare Premium",
-    description: "Vehicule moderne cu toate facilitatile pentru calatorii lungi",
+    description: "Vehicule moderne pentru curse internationale lungi, cu accent pe confort si spatiu pentru bagaje",
     capacity: "49 locuri",
   },
 ] as const;
@@ -43,9 +43,10 @@ export function FleetSection() {
           </div>
           <div className="flex items-end">
             <p className="text-lg leading-relaxed text-white/60">
-              Flota noastra include microbuze si autocare de ultima generatie, 
-              verificate tehnic permanent, pentru a va oferi siguranta si 
-              confort pe intreaga durata a calatoriei.
+              Flota noastra include microbuze si autocare moderne, pregatite
+              pentru transport persoane international, bagaje si colete pe rutele
+              Romania - Europa, cu verificari tehnice periodice si dotari pentru
+              confort pe drum lung.
             </p>
           </div>
         </div>
@@ -74,8 +75,8 @@ export function FleetSection() {
                   Microbuze 8+1 Locuri
                 </h3>
                 <p className="mt-2 max-w-md text-white/70">
-                  Vehicule executive pentru grupuri mici, cu toate dotarile 
-                  necesare pentru o calatorie confortabila.
+                  Vehicule executive pentru curse door-to-door, grupuri mici si
+                  transport flexibil spre principalele destinatii europene.
                 </p>
               </div>
             </div>
