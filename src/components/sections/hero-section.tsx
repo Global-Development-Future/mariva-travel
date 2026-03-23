@@ -29,7 +29,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-[calc(6rem+env(safe-area-inset-bottom))] pt-20 md:pb-40 lg:px-8">
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="animate-fade-in-up opacity-0">
@@ -98,18 +98,26 @@ export function HeroSection() {
           </div>
 
           {/* Phone Number */}
-          <p className="animate-fade-in-up animation-delay-400 mt-6 text-sm text-white/50 opacity-0">
-            Telefon: <span className="font-medium text-white/80">{siteConfig.dispatchPhoneDisplay}</span>  /  WhatsApp: <span className="font-medium text-white/80">{siteConfig.whatsappPhoneDisplay}</span>
+          <p className="animate-fade-in-up animation-delay-400 mt-6 flex flex-col gap-1 text-sm text-white/50 opacity-0 sm:block">
+            <span>
+              Telefon: <span className="font-medium text-white/80">{siteConfig.dispatchPhoneDisplay}</span>
+            </span>
+            <span className="sm:ml-2">
+              WhatsApp: <span className="font-medium text-white/80">{siteConfig.whatsappPhoneDisplay}</span>
+            </span>
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className="animate-fade-in animation-delay-400 absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/30 opacity-0 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
+        <div className="animate-fade-in animation-delay-400 mt-10 border-t border-white/10 bg-black/30 opacity-0 backdrop-blur-sm md:absolute md:bottom-0 md:left-0 md:right-0 md:mt-0">
+          <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-5 md:justify-between md:py-7 lg:px-8">
             <div className="hidden gap-12 md:flex">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-3xl font-light text-white" style={{ fontFamily: "var(--font-playfair)" }}>
+                  <p
+                    className="pb-1 text-3xl leading-[1.15] font-light text-white"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
                     {stat.value}
                   </p>
                   <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/50">
